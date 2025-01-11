@@ -1,13 +1,13 @@
 import React from "react";
 import ExpenseItem from "./ExpenseItem";
-import "./ExpenseList.css";
+import "./css/ExpenseList.css";
 
 
 const ExpenseList = ({ expenses }) => {
   return (
-    <div className="Chart">
+    <div className="chart">
       {expenses.length === 0 ? (
-        <p>  </p>
+        <p> No Expenses!  </p>
       ) : (
         <ul>
           {expenses.map((expenses, index) => (
