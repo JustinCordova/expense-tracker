@@ -46,7 +46,7 @@ const ExpenseForm = ({ addExpense }) => {
       <div className="categoryLabel">
         <label>Category:</label>
         <select value={category} onChange={(e) => setCategory(e.target.value)}>
-          {/* <option value="">Select Category</option> */}
+          <option value="">Select Category</option>
           <option value="Food">Food</option>
           <option value="Shopping">Shopping</option>
           <option value="Bills">Bills</option>
