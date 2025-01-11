@@ -2,24 +2,32 @@ import React, { useState } from "react";
 import "./css/ExpenseForm.css";
 
 const ExpenseForm = ({ addExpense }) => {
-  const [title, setTitle] = useState("");
-  const [amount, setAmount] = useState("");
-  const [category, setCategory] = useState("");
-  // const [date, setDate] = useState("");
-  const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
+  const [title, setTitle] = useState(""); // Title of the expense
+  const [amount, setAmount] = useState(""); // Amount of the expense
+  const [category, setCategory] = useState(""); // Category of the expense
+  const [date, setDate] = useState(new Date().toISOString().split("T")[0]); // Default to today's date
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Prevent submission if any field is empty
     if (!title || !amount || !category || !date) {
       alert("Please fill out all fields before submitting.");
       return;
     }
+    // Pass data to parent component and reset fields
     addExpense({ title, amount: parseFloat(amount), category, date });
     setTitle("");
     setAmount("");
     setCategory("");
-    // setDate("");
-    setDate(new Date().toISOString().split("T")[0]);
+    setDate(new Date().toISOString().split("T")[0]); // Reset date to today
+  };
+
+  const handleAmountChange = (e) => {
+    let value = e.target.value;
+    // Only allow numbers and one decimal point using regex pattern
+    if (/^\d*\.?\d{0,2}$/.test(value)) {
+      setAmount(value); // Update the amount state only if it matches the pattern
+    }
   };
 
   return (
@@ -36,11 +44,10 @@ const ExpenseForm = ({ addExpense }) => {
       <div className="amountLabel">
         <label>Amount:</label>
         <input
-          type="number"
+          type="text"
           value={amount}
-          onChange={(e) => setAmount(e.target.value)}
+          onChange={handleAmountChange} // Ensure proper format
           placeholder="Enter Amount"
-          min="0"
         />
       </div>
       <div className="categoryLabel">

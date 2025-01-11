@@ -1,5 +1,5 @@
 form {
-  width: 800px;;
+  width: 800px;
   height: 50px;
   margin: 20px auto;
   padding: 20px;
@@ -24,10 +24,16 @@ label {
 }
 
 .submitLabel {
-    display: flex;
-    height: 37px;
-    margin-top: 25px;
-  }
+  display: flex;
+  height: 37px;
+  margin-top: 25px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.submitLabel:hover {
+  transform: scale(1.05); /* Scale up the button */
+  border-color: black;
+}
 
 input,
 select {
@@ -36,7 +42,16 @@ select {
   font-size: 14px;
   border: 1px solid #ddd;
   border-radius: 4px;
+  transition: transform 0.2s ease-in-out; /* Smooth transition */
 }
+
+input:hover,
+select:hover {
+  transform: scale(1.05); /* Scale up slightly on hover */
+  border-color: #f7768e;
+}
+
+
 
 input:focus,
 select:focus {
@@ -45,16 +60,16 @@ select:focus {
 }
 
 button {
-    width: 100%;
-    padding: 10px;
-    background-color: #f7768e;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #e3767a;
-  }
+  width: 100%;
+  padding: 10px;
+  background-color: #f7768e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e3767a;
+}

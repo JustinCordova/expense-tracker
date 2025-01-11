@@ -7,8 +7,8 @@ const ExpenseItem = ({ expense }) => {
       <li className="expense-item">
         <p className="title">{expense.title}</p>
         <p className="amount">${expense.amount.toFixed(2)}</p>
-        <p>Category: {expense.category}</p>
-        <p>Date: {new Date(expense.date).toLocaleDateString()}</p>
+        <p className="category">{expense.category}</p>
+        <p className="date">{new Date(expense.date).toLocaleDateString()}</p>
       </li>
     </li>
   );
