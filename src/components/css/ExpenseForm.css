@@ -1,5 +1,5 @@
 form {
-  width: 60%;
+  width: 800px;;
   height: 50px;
   margin: 20px auto;
   padding: 20px;
@@ -9,6 +9,7 @@ form {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  justify-content: space-between;
 }
 
 form div {
@@ -24,6 +25,8 @@ label {
 
 .submitLabel {
     display: flex;
+    height: 37px;
+    margin-top: 25px;
   }
 
 input,
