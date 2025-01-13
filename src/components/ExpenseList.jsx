@@ -2,7 +2,8 @@ import React from "react";
 import ExpenseItem from "./ExpenseItem";
 import "./css/ExpenseList.css";
 
-const ExpenseList = ({ expenses }) => {
+const ExpenseList = ({ expenses, deleteExpense, editExpense }) => {
+  
   return (
     <div className="chart">
       <div className="chart-header">
@@ -16,7 +17,8 @@ const ExpenseList = ({ expenses }) => {
       ) : (
         <ul>
           {expenses.map((expense, index) => (
-            <ExpenseItem key={index} expense={expense} />
+            
+            <ExpenseItem key={index} index={index} expense={expense} deleteExpense={deleteExpense} />
           ))}
         </ul>
       )}
