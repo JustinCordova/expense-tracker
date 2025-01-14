@@ -5,7 +5,7 @@ const ExpenseForm = ({ addExpense }) => {
   const [title, setTitle] = useState(""); // Title of the expense
   const [amount, setAmount] = useState(""); // Amount of the expense
   const [category, setCategory] = useState(""); // Category of the expense
-  const [date, setDate] = useState(new Date().toISOString().split("T")[0]); // Default to today's date
+  const [date, setDate] = useState(new Date().toLocaleDateString("en-CA")); // Default to today's date
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,7 +19,7 @@ const ExpenseForm = ({ addExpense }) => {
     setTitle("");
     setAmount("");
     setCategory("");
-    setDate(new Date().toISOString().split("T")[0]); // Reset date to today
+    setDate(new Date().toLocaleDateString("en-CA")); // Reset date to today
   };
 
   const handleAmountChange = (e) => {

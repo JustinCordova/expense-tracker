@@ -12,13 +12,14 @@ const ExpenseList = ({ expenses, deleteExpense, editExpense }) => {
         <div className="header-item">Category</div>
         <div className="header-item">Date</div>
       </div>
+      <div className="divider"></div>
       {expenses.length === 0 ? (
         <p> No Expenses!  </p>
       ) : (
         <ul>
           {expenses.map((expense, index) => (
             
-            <ExpenseItem key={index} index={index} expense={expense} deleteExpense={deleteExpense} />
+            <ExpenseItem key={index} index={index} expense={expense} deleteExpense={deleteExpense} editExpense={editExpense}/>
           ))}
         </ul>
       )}

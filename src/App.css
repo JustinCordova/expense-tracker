@@ -41,3 +41,24 @@ h1 {
   margin: 0;
   padding: 50px;
 }
+
+.total-exp-container {
+  width: 250px;
+  padding: 15px;
+  background-color: #f7f7f7;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.total-expense {
+  font-size: 1.6rem;
+  color: #f7768e;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
